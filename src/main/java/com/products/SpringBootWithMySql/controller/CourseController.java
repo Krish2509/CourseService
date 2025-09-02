@@ -18,7 +18,7 @@ public class CourseController {
     CourseService courseService;
 
     @PostMapping("/course")
-    public ResponseEntity<String> creteCourse(@RequestBody Course course) {
+    public ResponseEntity<String> createCourse(@RequestBody Course course) {
         var status = courseService.upsert(course);
         return new ResponseEntity<>(status, HttpStatus.CREATED);
     }
